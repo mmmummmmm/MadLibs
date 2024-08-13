@@ -10,7 +10,7 @@ template_reportoire = ["It was about (a number) (a measure of time) ago when I a
 input ('''
        Welcome adventurer! You are about to help us make a history here. 
        Here's how it works:
-       You give us a little bit of detail and Shahrzad the story teller will tell you a story based on your input. Be careful what words you give us!
+       You give us a little bit of detail and Shahrzad the story teller will tell you a story based on your input. Be careful what words you choose!
        To continue press ENTER . . . ''')
 #Let's select a template by random. We don't trust the users to make the right choice.
 random_template = random.choice(template_reportoire)
@@ -20,3 +20,29 @@ random_template = random.choice(template_reportoire)
 #https://stackoverflow.com/questions/58111954/python-extract-substring-from-between-parenthesis
 template_splits = random_template.replace(')','(').split('(')   #so cool [0::2] to get the other parts. and then we can use join to connect the template with user inputs.
 
+#Challenge: Split into two alternating lists. Again, helps with automating the code.
+#Solution:
+#https://www.google.com/search?q=python+split+two+lists+alternating&sca_esv=fddf35721d1ff72a&sxsrf=ADLYWIIg-IT5ZTxjj8g3IMPPLjaE6k4p1Q%3A1723119838145&ei=3ri0ZrGqCIWGxc8PyrH96AU&ved=0ahUKEwixke7OseWHAxUFQ_EDHcpYH10Q4dUDCBA&uact=5&oq=python+split+two+lists+alternating&gs_lp=Egxnd3Mtd2l6LXNlcnAiInB5dGhvbiBzcGxpdCB0d28gbGlzdHMgYWx0ZXJuYXRpbmcyCBAhGKABGMMEMggQIRigARjDBEjCDFDUA1jjCHACeAGQAQCYAdMCoAGlCaoBBzAuMi4yLjG4AQPIAQD4AQGYAgOgArABwgIKEAAYsAMY1gQYR5gDAIgGAZAGCJIHAzIuMaAH_hc&sclient=gws-wiz-serp
+#https://stackoverflow.com/questions/1442782/how-to-split-an-iterable-into-two-lists-with-alternating-elements
+template_words, key_words = template_splits[0::2], template_splits[1::2]
+
+#User's inputs
+answers =[]
+
+#Collect keywords from the user. Use the try/except concept to validate numbers. Smart, huh? Thank you Stackoverflow. 
+# A for loop might make more sense as it can put a limit for the number of retries.
+for keyword in (key_words):
+    print (keyword)
+   # user_input = input (f'Please enter a/an {i} ')
+    if i == 'a number':
+        while True: 
+            try:    
+                user_input = input (f'Please enter {keyword}: ')
+                user_input_int = int(user_input)
+            except ValueError:
+                print (f'Dude! Really? {user_input}?  TRY AGAIN!')
+                continue
+            break
+    else:
+        user_input = input (f'Please enter {keyword}: ')
+    answers.append(user_input)
