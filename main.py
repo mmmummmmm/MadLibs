@@ -3,8 +3,8 @@ import random
 
 #A list to store the templates, feel free to append the list if you know how to tell a story.
 template_reportoire = ["It was about (a number) (a measure of time) ago when I arrived at the hospital in a (a mode of Transportation). The hospital was a/an (an adjective) place, there were a lot of (an adjective) (a plural noun) there. There were nurses who had (a color) (a part of the body). If someone wanted to come into my room I told them that they had to (a verb) first. I’ve decorated my room with (a number) (a noun). Today I talked to a doctor and they were wearing a (a noun) on their (a part of body). I heard that all doctors (a verb) (a noun) every day for breakfast. The most (an adjective) thing about being in the hospital is the (a silly word) (a noun)!",
-                       "This weekend I am going camping with (a person’s name). I packed my lantern, sleeping bag, and (a noun). I am so (an adjective describing a feeling) to (a verb without 'to') in a tent. I am (an adjective describing a feeling) we might see a/an (an animal), I hear they’re kind of dangerous. While we’re camping, we are going to hike, fish, and (a verb). I have heard that the (a color) lake is great for ( a verb enging in -ing). Then we will (an adverb ending in -ly) hike through the forest for (a number) (a measure of time). If I see a/an (a color) (an animal) while hiking, I am going to bring it home as a pet! At night we will tell (a number) (a silly word) stories and roast (a noun) around the campfire!!",
-                       "Dear (a person’s name ), I am writing to you from a/an (an adjective) castle in an enchanted forest. I found myself here one day after going for a ride on a (a color) (an animal) in (a place). There are (an adjective) (a magical Creature in plural form) and (an adjective) (a magical creature in Plural from) here! In the (a room in a house) there is a pool full of (a noun). I fall asleep each night on a (a noun) of (a plural noun) and dream of (an adjective) (a plural noun). It feels as though I have lived here for (a number) (a measure of time). I hope one day you can visit, although the only way to get here now is (a verb ending in -ing) on a (an Adjective) (a noun)!!"]
+                       "This weekend I am going camping with (a person’s name). I packed my lantern, sleeping bag, and (a noun). I am so (an adjective describing a feeling) to (a verb without 'to') in a tent. I am (an adjective describing a feeling) we might see a/an (an animal), I hear they’re kind of dangerous. While we’re camping, we are going to hike, fish, and (a verb without 'to'). I have heard that the (a color) lake is great for ( a verb enging in -ing). Then we will (an adverb ending in -ly) hike through the forest for (a number) (a measure of time). If I see a/an (a color) (an animal) while hiking, I am going to bring it home as a pet! At night we will tell (a number) (a silly word) stories and roast (a noun) around the campfire!",
+                       "Dear (a person’s name ), I am writing to you from a/an (an adjective) castle in an enchanted forest. I found myself here one day after going for a ride on a (a color) (an animal) in (a place). There are (an adjective) (a magical Creature in plural form) and (an adjective) (a magical creature in Plural from) here! In the (a room in a house) there is a pool full of (a noun). I fall asleep each night on a (a noun) of (a plural noun) and dream of (an adjective) (a plural noun). It feels as though I have lived here for (a number) (a measure of time). I hope one day you can visit, although the only way to get here now is (a verb ending in -ing) on a (an Adjective) (a noun)!"]
 
 
 input ('''
@@ -34,7 +34,7 @@ answers =[]
 for keyword in (key_words):
     print (keyword)
    # user_input = input (f'Please enter a/an {i} ')
-    if i == 'a number':
+    if keyword == 'a number':
         while True: 
             try:    
                 user_input = input (f'Please enter {keyword}: ')
@@ -46,3 +46,11 @@ for keyword in (key_words):
     else:
         user_input = input (f'Please enter {keyword}: ')
     answers.append(user_input)
+
+#recreate the story
+
+story = [None]*(len(template_words)+(len(answers)))
+story[::2] = template_words
+story[1::2] = answers
+story = ''.join(story)
+print (story)
