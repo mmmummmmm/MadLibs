@@ -31,10 +31,12 @@ Welcome to the **MadLibs**! This Python program allows you to create fun and whi
 ## Logic of the Program
 - The idea is to automate the code by extracting words in paranthesis and going through the list of keywords to obtaining input from the user and using the same list to generate the final story.
 - Inspritions:
-  1- https://stackoverflow.com/questions/58111954/python-extract-substring-from-between-parenthesis
-(Replacing ')' with '(' simplifies the process of extracting placeholders from the template.)
-  2- #https://stackoverflow.com/questions/1442782/how-to-split-an-iterable-into-two-lists-with-alternating-elements
-  (To split the list into alternating keywords.)
+  1. https://stackoverflow.com/questions/58111954/python-extract-substring-from-between-parenthesis
+  -(Replacing ')' with '(' simplifies the process of extracting placeholders from the template.)
+  2. #https://stackoverflow.com/questions/1442782/how-to-split-an-iterable-into-two-lists-with-alternating-elements
+  -(To split the list into alternating keywords.)
+
+  
 
 
 ## Example
