@@ -58,6 +58,6 @@ Here's an example of how the program works:
 ## How to Run
 
 1. Ensure you have Python installed on your system.
-2. Copy the code from this repository and save it as `story_generator.py`.
+2. Copy the code from this repository and save it as `main.py`.
 3. Run the script using your terminal or command prompt:
 
